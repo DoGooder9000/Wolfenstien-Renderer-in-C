@@ -5,10 +5,17 @@
 #include "src/headers/settings.h"
 #include "src/headers/player.h"
 #include "src/headers/SDL_Functions.h"
+#include "src/headers/draw.h"
+
+void FPS();
 
 PlayerCharacter Player;
 
 bool running = true;
+
+float oldtime = 0;
+float newtime = 0;
+
 
 int main(int argc, char* argv[]){
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -23,15 +30,24 @@ int main(int argc, char* argv[]){
 
 	SDL_Event e;
 	while (running){
+		oldtime = newtime;
+
 		while (SDL_PollEvent(&e)){
 			if (e.type == SDL_QUIT){
 				running = false;
 			}
 		}
 
-		FillRenderer(Renderer, 255, 255, 255, 255);
+		FillRenderer(Renderer, 0, 0, 0, 255);
+
+		DrawMap(Renderer);
+		DrawPlayer(Renderer, Player, 0, 0, 255, 255);
 
 		SDL_RenderPresent(Renderer);
+
+		newtime = SDL_GetTicks();
+
+		FPS();
 	}
 
 	SDL_DestroyWindow(Window);
@@ -39,4 +55,10 @@ int main(int argc, char* argv[]){
 	SDL_Quit();
 	
 	return 0;
+}
+
+void FPS(){
+	if (newtime != oldtime){
+		SDL_Log("%f", 1000.f / ((float)(newtime-oldtime)));
+	}
 }

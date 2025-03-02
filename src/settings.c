@@ -4,6 +4,11 @@ const char* WINDOW_TITLE = "Wolfenstien Raycaster in C";
 const int WINDOW_WIDTH = 600;
 const int WINDOW_HEIGHT = 600;
 
+const int TILE_WIDTH = WINDOW_WIDTH/MAP_WIDTH;
+const int TILE_HEIGHT = WINDOW_HEIGHT/MAP_HEIGHT;
+
+int PLAYER_DRAW_RADIUS = TILE_WIDTH/4;
+
 int map[MAP_HEIGHT][MAP_WIDTH] = {	
 									{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 									{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},

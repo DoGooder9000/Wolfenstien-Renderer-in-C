@@ -3,6 +3,10 @@
 
 typedef struct{
 	float angle;	// Angles are always going to be in radians, because of the math funciton in math.h
+
+	float screen_x;
+	float screen_y;
+
 } PlayerCharacter;
 
 void PlayerInit(PlayerCharacter* player);
