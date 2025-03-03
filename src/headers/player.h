@@ -10,5 +10,7 @@ typedef struct{
 } PlayerCharacter;
 
 void PlayerInit(PlayerCharacter* player);
+void MovePlayer(PlayerCharacter* player, float magnitude);
+void TurnPlayer(PlayerCharacter* player, float angle);
 
 #endif

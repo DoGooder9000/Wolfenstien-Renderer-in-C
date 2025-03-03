@@ -11,7 +11,12 @@ extern const int WINDOW_HEIGHT;
 extern const int TILE_WIDTH;
 extern const int TILE_HEIGHT;
 
+extern float PLAYER_MOVE_SPEED;
+extern float PLAYER_TURN_SPEED;
+
 extern int PLAYER_DRAW_RADIUS;
+
+extern const int FPS_CAP;
 
 extern int map[MAP_HEIGHT][MAP_WIDTH];
 
