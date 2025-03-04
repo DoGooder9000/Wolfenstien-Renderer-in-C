@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"settings.h": "c",
+		"geofunctions.h": "c",
+		"ray.h": "c",
+		"player.h": "c",
+		"projection.h": "c"
+	}
+}

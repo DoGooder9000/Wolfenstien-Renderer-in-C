@@ -18,6 +18,11 @@ extern int PLAYER_DRAW_RADIUS;
 
 extern const int FPS_CAP;
 
+extern float RAY_STEP_SIZE;
+
+extern float FOV; // in radians
+extern int RAYS_IN_FOV;
+
 extern int map[MAP_HEIGHT][MAP_WIDTH];
 
 #endif
