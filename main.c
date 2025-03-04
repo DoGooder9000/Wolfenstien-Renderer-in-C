@@ -59,21 +59,11 @@ int main(int argc, char* argv[]){
 
 		FillRenderer(Renderer, 0, 0, 0, 255);
 
-		//DrawMap(Renderer);
-		//DrawPlayer(Renderer, Player, 0, 0, 255, 255);
-
 		CastRaysFromPlayer(&Player, ray_list);
 
 		SDL_SetRenderDrawColor(Renderer, 0, 255, 255, 255);
 
 		Draw3D(Renderer, ray_list, Player.angle);
-
-		/*
-		for (int i=0; i<RAYS_IN_FOV; i++){
-			ray = ray_list[i];
-			SDL_RenderDrawLine(Renderer, Player.screen_x, Player.screen_y, ray.current_x, ray.current_y);
-		}
-		*/
 
 		SDL_RenderPresent(Renderer);
 	}
